@@ -1,0 +1,124 @@
+-- public.cnc_3_2 definition
+
+-- Drop table
+
+-- DROP TABLE public.cnc_3_2;
+
+CREATE TABLE public.cnc_3_2 (
+	motoc_hours_name varchar(25) NULL,
+	core_work_time_ttl_value varchar(25) NULL,
+	core_work_time_cur_value varchar(25) NULL,
+	core_restart_cnt int4 NULL,
+	channel_cnt int4 NULL,
+	c1_tot_work_time varchar(25) NULL,
+	c1_work_time_now varchar(25) NULL,
+	c1_stat varchar(25) NULL,
+	c1_mode varchar(25) NULL,
+	c1_prog_work_time varchar(25) NULL,
+	c1_percent_prog int4 NULL,
+	c1_prog varchar(25) NULL,
+	axes_c1_x_float numeric NULL,
+	axes_c1_y_float numeric NULL,
+	axes_c1_z_float numeric NULL,
+	axes_c1_b_float numeric NULL,
+	axes_c1_c_float numeric NULL,
+	axes_c1_s_float numeric NULL,
+	axes_c1_s2_float numeric NULL,
+	axes_c2_x_float numeric NULL,
+	axes_c2_y_float numeric NULL,
+	axes_c2_z_float numeric NULL,
+	axes_c2_b_float numeric NULL,
+	axes_c2_c_float numeric NULL,
+	axes_c2_s_float numeric NULL,
+	axes_c2_s2_float numeric NULL,
+	axes_c3_x_float numeric NULL,
+	axes_c3_y_float numeric NULL,
+	axes_c3_z_float numeric NULL,
+	axes_c3_b_float numeric NULL,
+	axes_c3_c_float numeric NULL,
+	axes_c3_s_float numeric NULL,
+	axes_c3_s2_float numeric NULL,
+	axes_c4_x_float numeric NULL,
+	axes_c4_y_float numeric NULL,
+	axes_c4_z_float numeric NULL,
+	axes_c4_b_float numeric NULL,
+	axes_c4_c_float numeric NULL,
+	axes_c4_s_float numeric NULL,
+	axes_c4_s2_float numeric NULL,
+	time_load timestamp NULL
+);
+
+-- public.cnc_5_2 definition
+
+-- Drop table
+
+-- DROP TABLE public.cnc_5_2;
+
+CREATE TABLE public.cnc_5_2 (
+	motoc_hours_name varchar(25) NULL,
+	core_work_time_ttl_value varchar(25) NULL,
+	core_work_time_cur_value varchar(25) NULL,
+	core_restart_cnt int4 NULL,
+	channel_cnt int4 NULL,
+	c1_tot_work_time varchar(25) NULL,
+	c1_work_time_now varchar(25) NULL,
+	c1_stat varchar(25) NULL,
+	c1_mode varchar(25) NULL,
+	c1_prog_work_time varchar(25) NULL,
+	c1_percent_prog int4 NULL,
+	c1_prog varchar(25) NULL,
+	axes_c1_x_float numeric NULL,
+	axes_c1_y_float numeric NULL,
+	axes_c1_z_float numeric NULL,
+	axes_c1_b_float numeric NULL,
+	axes_c1_c_float numeric NULL,
+	axes_c1_s_float numeric NULL,
+	time_load timestamp NULL
+);
+
+-- public.sens_h_2 definition
+
+-- Drop table
+
+-- DROP TABLE public.sens_h_2;
+
+CREATE TABLE public.sens_h_2 (
+	hump numeric NULL,
+	time_load timestamp NULL
+);
+
+
+-- public.sens_t_2 definition
+
+-- Drop table
+
+-- DROP TABLE public.sens_t_2;
+
+CREATE TABLE public.sens_t_2 (
+	temperature numeric NULL,
+	time_load timestamp NULL
+);
+
+
+-- public.sensor_hump_2 definition
+
+-- Drop table
+
+-- DROP TABLE public.sensor_hump_2;
+
+CREATE TABLE public.sensor_hump_2 (
+	hump numeric NULL,
+	time_load timestamp NULL
+);
+
+
+-- public.sensor_temp_2 definition
+
+-- Drop table
+
+-- DROP TABLE public.sensor_temp_2;
+
+CREATE TABLE public.sensor_temp_2 (
+	temperature numeric NULL,
+	time_load timestamp NULL
+);
