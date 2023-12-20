@@ -1,0 +1,249 @@
+[
+    {
+        "id": "d91f253403838853",
+        "type": "tab",
+        "label": "Поток 4",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "ee70b7cdbdec8ffd",
+        "type": "http request",
+        "z": "d91f253403838853",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://cnc.kovalev.team/get/3",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 310,
+        "y": 120,
+        "wires": [
+            [
+                "b531f20e70b3ecab"
+            ]
+        ]
+    },
+    {
+        "id": "b531f20e70b3ecab",
+        "type": "function",
+        "z": "d91f253403838853",
+        "name": "function 5",
+        "func": "function formatDuration(hours, minutes, seconds) {\n    // Ensure that hours, minutes, and seconds are integers\n    hours = parseInt(hours, 10) || 0;\n    minutes = parseInt(minutes, 10) || 0;\n    seconds = parseInt(seconds, 10) || 0;\n\n    // Format each component to have at least two digits\n    const formattedHours = String(hours).padStart(3, '0');\n    const formattedMinutes = String(minutes).padStart(2, '0');\n    const formattedSeconds = String(seconds).padStart(2, '0');\n\n    return `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;\n}\n\n// Function to extract number and convert to float\nfunction extractNumberAndConvertToFloat(value) {\n    // Extract number from the value (remove мм)\n    var extractedNumber = parseFloat(value.replace(' мм', '').replace(',', '.')) || 0;\n\n    // Convert to float format\n    return extractedNumber;\n}\n\nvar jsonData = msg.payload.data;\n\n// Extract and format data as needed for PostgreSQL\nvar motocHoursData = jsonData[0][1];\nvar motoc_hours_name = jsonData[0][0];\nvar core_work_time_ttl_value = motocHoursData[0][1];\nvar core_work_time_cur_value = motocHoursData[1][1];\nvar core_restart_cnt = parseInt(motocHoursData[2][1], 10) || 0;\nvar channel_cnt = parseInt(motocHoursData[3][1], 10) || 0;\n\n\nvar channel1Data = jsonData[1][1];\nvar c1_tot_work_time= channel1Data[0][1];\nvar c1_work_time_now=channel1Data[1][1];\nvar c1_stat= channel1Data[2][1];\nvar c1_mode= channel1Data[3][1];\nvar c1_prog_work_time= channel1Data[4][1];\n// Extract the percentage value from the string\nvar c1_percent_prog= channel1Data[5][1];\nc1_percent_prog= parseInt(c1_percent_prog.replace('%', ''), 10) || 0;\nvar c1_prog=channel1Data[6][1];\n\nvar axes_channel1 = jsonData[2][1];\nvar axes_C1_X_float = extractNumberAndConvertToFloat(axes_channel1[0][1]);\nvar axes_C1_Y_float = extractNumberAndConvertToFloat(axes_channel1[1][1]);\nvar axes_C1_Z_float = extractNumberAndConvertToFloat(axes_channel1[2][1]);\nvar axes_C1_B_float = extractNumberAndConvertToFloat(axes_channel1[3][1]);\nvar axes_C1_C_float = extractNumberAndConvertToFloat(axes_channel1[4][1]);\nvar axes_C1_S_float = extractNumberAndConvertToFloat(axes_channel1[5][1]);\nvar axes_C1_S2_float = extractNumberAndConvertToFloat(axes_channel1[6][1]);\n\nvar axes_channel2 = jsonData[3][1];\nvar axes_C2_X_float = extractNumberAndConvertToFloat(axes_channel2[0][1]);\nvar axes_C2_Y_float = extractNumberAndConvertToFloat(axes_channel2[1][1]);\nvar axes_C2_Z_float = extractNumberAndConvertToFloat(axes_channel2[2][1]);\nvar axes_C2_B_float = extractNumberAndConvertToFloat(axes_channel2[3][1]);\nvar axes_C2_C_float = extractNumberAndConvertToFloat(axes_channel2[4][1]);\nvar axes_C2_S_float = extractNumberAndConvertToFloat(axes_channel2[5][1]);\nvar axes_C2_S2_float = extractNumberAndConvertToFloat(axes_channel2[6][1]);\n\nvar axes_channel3 = jsonData[4][1];\nvar axes_C3_X_float = extractNumberAndConvertToFloat(axes_channel3[0][1]);\nvar axes_C3_Y_float = extractNumberAndConvertToFloat(axes_channel3[1][1]);\nvar axes_C3_Z_float = extractNumberAndConvertToFloat(axes_channel3[2][1]);\nvar axes_C3_B_float = extractNumberAndConvertToFloat(axes_channel3[3][1]);\nvar axes_C3_C_float = extractNumberAndConvertToFloat(axes_channel3[4][1]);\nvar axes_C3_S_float = extractNumberAndConvertToFloat(axes_channel3[5][1]);\nvar axes_C3_S2_float = extractNumberAndConvertToFloat(axes_channel3[6][1]);\n\nvar axes_channel4 = jsonData[5][1];\nvar axes_C4_X_float = extractNumberAndConvertToFloat(axes_channel4[0][1]);\nvar axes_C4_Y_float = extractNumberAndConvertToFloat(axes_channel4[1][1]);\nvar axes_C4_Z_float = extractNumberAndConvertToFloat(axes_channel4[2][1]);\nvar axes_C4_B_float = extractNumberAndConvertToFloat(axes_channel4[3][1]);\nvar axes_C4_C_float = extractNumberAndConvertToFloat(axes_channel4[4][1]);\nvar axes_C4_S_float = extractNumberAndConvertToFloat(axes_channel4[5][1]);\nvar axes_C4_S2_float = extractNumberAndConvertToFloat(axes_channel4[6][1]);\n\nconst currentDateTime = new Date();\nconst formattedTimestamp = currentDateTime.toISOString()\n  .replace('T', ' ')\n  .replace('Z', '');\n\n\nmsg.params = [motoc_hours_name, core_work_time_ttl_value\n    , core_work_time_cur_value, core_restart_cnt, channel_cnt\n    , c1_tot_work_time, c1_work_time_now, c1_stat, c1_mode, c1_prog_work_time\n    , c1_percent_prog, c1_prog, axes_C1_X_float, axes_C1_Y_float,axes_C1_Z_float\n    , axes_C1_B_float, axes_C1_C_float, axes_C1_S_float, axes_C1_S2_float\n    , axes_C2_X_float, axes_C2_Y_float, axes_C2_Z_float, axes_C2_B_float\n    , axes_C2_C_float, axes_C2_S_float, axes_C2_S2_float, axes_C3_X_float\n    , axes_C3_Y_float, axes_C3_Z_float, axes_C3_B_float, axes_C3_C_float\n    , axes_C3_S_float, axes_C3_S2_float, axes_C4_X_float, axes_C4_Y_float\n    , axes_C4_Z_float, axes_C4_B_float, axes_C4_C_float, axes_C4_S_float\n    , axes_C4_S2_float, formattedTimestamp];\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 120,
+        "wires": [
+            [
+                "0759497fd8d92494",
+                "8f7927d253ce9b2b"
+            ]
+        ]
+    },
+    {
+        "id": "0759497fd8d92494",
+        "type": "debug",
+        "z": "d91f253403838853",
+        "name": "debug 5",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "params",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "d88dd470.0ac7b8",
+        "type": "inject",
+        "z": "d91f253403838853",
+        "name": "make request",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 120,
+        "wires": [
+            [
+                "ee70b7cdbdec8ffd"
+            ]
+        ]
+    },
+    {
+        "id": "8f7927d253ce9b2b",
+        "type": "postgresql",
+        "z": "d91f253403838853",
+        "name": "",
+        "query": "insert into cnc_3_2 (motoc_hours_name,core_work_time_ttl_value,core_work_time_cur_value\n                    ,core_restart_cnt,channel_cnt,c1_tot_work_time,c1_work_time_now\n                    ,c1_stat,c1_mode,c1_prog_work_time,c1_percent_prog,c1_prog,axes_c1_x_float\n                    ,axes_c1_y_float,axes_c1_z_float,axes_c1_b_float,axes_c1_c_float\n                    ,axes_c1_s_float,axes_c1_s2_float,axes_c2_x_float,axes_c2_y_float\n                    ,axes_c2_z_float,axes_c2_b_float,axes_c2_c_float,axes_c2_s_float\n                    ,axes_c2_s2_float,axes_c3_x_float,axes_c3_y_float,axes_c3_z_float\n                    ,axes_c3_b_float,axes_c3_c_float,axes_c3_s_float,axes_c3_s2_float\n                    ,axes_c4_x_float,axes_c4_y_float,axes_c4_z_float,axes_c4_b_float\n                    ,axes_c4_c_float,axes_c4_s_float,axes_c4_s2_float,time_load)\nvalues ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20 \n        , $21, $22, $23, $24, $25, $26, $27, $28, $29, $30, $31, $32, $33, $34, $35, $36, $37\n        , $38, $39, $40, $41);",
+        "postgreSQLConfig": "cb51a2432783f5be",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 670,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c29463f51fecce73",
+        "type": "http request",
+        "z": "d91f253403838853",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://cnc.kovalev.team/get/5",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 310,
+        "y": 440,
+        "wires": [
+            [
+                "007290119ff49f1c"
+            ]
+        ]
+    },
+    {
+        "id": "007290119ff49f1c",
+        "type": "function",
+        "z": "d91f253403838853",
+        "name": "function 6",
+        "func": "function extractNumberAndConvertToFloat(value) {\n    // Extract number from the value (remove мм)\n    var extractedNumber = parseFloat(value.replace(' мм', '').replace(',', '.')) || 0;\n\n    // Convert to float format\n    return extractedNumber;\n}\n\nvar jsonData = msg.payload.data;\n\nvar motocHoursData = jsonData[0][1];\nvar motoc_hours_name = jsonData[0][0];\nvar core_work_time_ttl_value = motocHoursData[0][1];\nvar core_work_time_cur_value = motocHoursData[1][1];\nvar core_restart_cnt = parseInt(motocHoursData[2][1], 10) || 0;\nvar channel_cnt = parseInt(motocHoursData[3][1], 10) || 0;\n\nvar channel1Data = jsonData[1][1];\nvar c1_tot_work_time= channel1Data[0][1];\nvar c1_work_time_now=channel1Data[1][1];\nvar c1_stat= channel1Data[2][1];\nvar c1_mode= channel1Data[3][1];\nvar c1_prog_work_time= channel1Data[4][1];\n// Extract the percentage value from the string\nvar c1_percent_prog= channel1Data[5][1];\nc1_percent_prog= parseInt(c1_percent_prog.replace('%', ''), 10) || 0;\nvar c1_prog=channel1Data[6][1];\n\nvar axes_channel1 = jsonData[2][1];\nvar axes_C1_X_float = extractNumberAndConvertToFloat(axes_channel1[0][1]);\nvar axes_C1_Y_float = extractNumberAndConvertToFloat(axes_channel1[1][1]);\nvar axes_C1_Z_float = extractNumberAndConvertToFloat(axes_channel1[2][1]);\nvar axes_C1_B_float = extractNumberAndConvertToFloat(axes_channel1[3][1]);\nvar axes_C1_C_float = extractNumberAndConvertToFloat(axes_channel1[4][1]);\nvar axes_C1_S_float = extractNumberAndConvertToFloat(axes_channel1[5][1]);\n\n\nconst currentDateTime = new Date();\nconst formattedTimestamp = currentDateTime.toISOString()\n  .replace('T', ' ')\n  .replace('Z', '');\n\n\nmsg.params = [motoc_hours_name, core_work_time_ttl_value\n    , core_work_time_cur_value, core_restart_cnt, channel_cnt\n    , c1_tot_work_time, c1_work_time_now, c1_stat, c1_mode, c1_prog_work_time\n    , c1_percent_prog, c1_prog, axes_C1_X_float, axes_C1_Y_float,axes_C1_Z_float\n    , axes_C1_B_float, axes_C1_C_float, axes_C1_S_float, formattedTimestamp];\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 440,
+        "wires": [
+            [
+                "248df69511df293e",
+                "c59a0cb5d343a9b4"
+            ]
+        ]
+    },
+    {
+        "id": "248df69511df293e",
+        "type": "debug",
+        "z": "d91f253403838853",
+        "name": "debug 6",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "params",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "b45ddcbd990a831b",
+        "type": "inject",
+        "z": "d91f253403838853",
+        "name": "make request",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 440,
+        "wires": [
+            [
+                "c29463f51fecce73"
+            ]
+        ]
+    },
+    {
+        "id": "c59a0cb5d343a9b4",
+        "type": "postgresql",
+        "z": "d91f253403838853",
+        "name": "",
+        "query": "insert into cnc_5_2 (motoc_hours_name,core_work_time_ttl_value,core_work_time_cur_value\n                    ,core_restart_cnt,channel_cnt,c1_tot_work_time,c1_work_time_now\n                    ,c1_stat,c1_mode,c1_prog_work_time,c1_percent_prog,c1_prog,axes_c1_x_float\n                    ,axes_c1_y_float,axes_c1_z_float,axes_c1_b_float,axes_c1_c_float\n                    ,axes_c1_s_float,time_load)\nvalues ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19);",
+        "postgreSQLConfig": "cb51a2432783f5be",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 670,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cb51a2432783f5be",
+        "type": "postgreSQLConfig",
+        "name": "",
+        "host": "127.0.0.1",
+        "hostFieldType": "str",
+        "port": "5432",
+        "portFieldType": "num",
+        "database": "mqtt",
+        "databaseFieldType": "str",
+        "ssl": "false",
+        "sslFieldType": "bool",
+        "applicationName": "",
+        "applicationNameType": "str",
+        "max": "10",
+        "maxFieldType": "num",
+        "idle": "1000",
+        "idleFieldType": "num",
+        "connectionTimeout": "10000",
+        "connectionTimeoutFieldType": "num",
+        "user": "postgres",
+        "userFieldType": "str",
+        "password": "15Anjie02",
+        "passwordFieldType": "str"
+    }
+]

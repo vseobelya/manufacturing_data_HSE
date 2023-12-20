@@ -1,0 +1,366 @@
+[
+    {
+        "id": "06679cb8334c370d",
+        "type": "tab",
+        "label": "Поток 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "1ce42558f8128c94",
+        "type": "mqtt in",
+        "z": "06679cb8334c370d",
+        "name": "",
+        "topic": "sens/t",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "67c6e0cc9de2fa74",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 160,
+        "wires": [
+            [
+                "68afffcadc771c08"
+            ]
+        ]
+    },
+    {
+        "id": "2d652dcf523ad799",
+        "type": "mqtt in",
+        "z": "06679cb8334c370d",
+        "name": "",
+        "topic": "sens/h",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "67c6e0cc9de2fa74",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 300,
+        "wires": [
+            [
+                "4248cb5d6092160e"
+            ]
+        ]
+    },
+    {
+        "id": "68afffcadc771c08",
+        "type": "function",
+        "z": "06679cb8334c370d",
+        "name": "function 1",
+        "func": "const currentDateTime = new Date();\nconst formattedTimestamp = currentDateTime.toISOString()\n  .replace('T', ' ')\n  .replace('Z', '');\n\nmsg.params = [msg.payload, formattedTimestamp];\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 160,
+        "wires": [
+            [
+                "b72556dcc55f9544",
+                "059d3e2cdba982fd"
+            ]
+        ]
+    },
+    {
+        "id": "b72556dcc55f9544",
+        "type": "debug",
+        "z": "06679cb8334c370d",
+        "name": "debug 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "params",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 460,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "059d3e2cdba982fd",
+        "type": "postgresql",
+        "z": "06679cb8334c370d",
+        "name": "",
+        "query": "insert into sens_t_2 (temperature, time_load)\nvalues ($1, $2);",
+        "postgreSQLConfig": "cb51a2432783f5be",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 470,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4248cb5d6092160e",
+        "type": "function",
+        "z": "06679cb8334c370d",
+        "name": "function 2",
+        "func": "// const currentDateTime = new Date();\n// const formattedTimestamp = currentDateTime.toLocaleString('en-UK', {\n//   year: 'numeric',\n//   month: '2-digit',\n//   day: '2-digit',\n//   hour12: false,\n//   hour: '2-digit',\n//   minute: '2-digit',\n//   second: '2-digit',\n//   fractionalSecondDigits: 3, // Include milliseconds\n// });\n\n// msg.params = [msg.payload, formattedTimestamp]\n// return msg;\n\n\nconst currentDateTime = new Date();\nconst formattedTimestamp = currentDateTime.toISOString()\n  .replace('T', ' ')\n  .replace('Z', '');\n\nmsg.params = [msg.payload, formattedTimestamp];\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 300,
+        "wires": [
+            [
+                "3159896e6db36412",
+                "a087641050a7f060"
+            ]
+        ]
+    },
+    {
+        "id": "3159896e6db36412",
+        "type": "debug",
+        "z": "06679cb8334c370d",
+        "name": "debug 2",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "params",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 460,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "a087641050a7f060",
+        "type": "postgresql",
+        "z": "06679cb8334c370d",
+        "name": "",
+        "query": "insert into sens_h_2 (hump, time_load)\nvalues ($1, $2);",
+        "postgreSQLConfig": "cb51a2432783f5be",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 470,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6a807ef244882644",
+        "type": "mqtt in",
+        "z": "06679cb8334c370d",
+        "name": "",
+        "topic": "sensor/temp",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "67c6e0cc9de2fa74",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 670,
+        "y": 160,
+        "wires": [
+            [
+                "2b6fa3d22b7328b9"
+            ]
+        ]
+    },
+    {
+        "id": "9526d1a5fb342955",
+        "type": "mqtt in",
+        "z": "06679cb8334c370d",
+        "name": "",
+        "topic": "sensor/hump",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "67c6e0cc9de2fa74",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 670,
+        "y": 300,
+        "wires": [
+            [
+                "b0a72855018b3d51"
+            ]
+        ]
+    },
+    {
+        "id": "2b6fa3d22b7328b9",
+        "type": "function",
+        "z": "06679cb8334c370d",
+        "name": "function 3",
+        "func": "// const currentDateTime = new Date();\n// const formattedTimestamp = currentDateTime.toLocaleString('en-UK', {\n//   year: 'numeric',\n//   month: '2-digit',\n//   day: '2-digit',\n//   hour12: false,\n//   hour: '2-digit',\n//   minute: '2-digit',\n//   second: '2-digit',\n//   fractionalSecondDigits: 3, // Include milliseconds\n// });\n\n// msg.params = [msg.payload, formattedTimestamp]\n// return msg;\n\n\nconst currentDateTime = new Date();\nconst formattedTimestamp = currentDateTime.toISOString()\n  .replace('T', ' ')\n  .replace('Z', '');\n\nmsg.params = [msg.payload, formattedTimestamp];\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 840,
+        "y": 160,
+        "wires": [
+            [
+                "eb0fb8daae299747",
+                "acde3c061e2d1187"
+            ]
+        ]
+    },
+    {
+        "id": "eb0fb8daae299747",
+        "type": "debug",
+        "z": "06679cb8334c370d",
+        "name": "debug 3",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "params",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1020,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "acde3c061e2d1187",
+        "type": "postgresql",
+        "z": "06679cb8334c370d",
+        "name": "",
+        "query": "insert into sensor_temp_2 (temperature, time_load)\nvalues ($1, $2);",
+        "postgreSQLConfig": "cb51a2432783f5be",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 1030,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b0a72855018b3d51",
+        "type": "function",
+        "z": "06679cb8334c370d",
+        "name": "function 4",
+        "func": "// const currentDateTime = new Date();\n// const formattedTimestamp = currentDateTime.toLocaleString('en-UK', {\n//   year: 'numeric',\n//   month: '2-digit',\n//   day: '2-digit',\n//   hour12: false,\n//   hour: '2-digit',\n//   minute: '2-digit',\n//   second: '2-digit',\n//   fractionalSecondDigits: 3, // Include milliseconds\n// });\n\n// msg.params = [msg.payload, formattedTimestamp]\n// return msg;\n\n\nconst currentDateTime = new Date();\nconst formattedTimestamp = currentDateTime.toISOString()\n  .replace('T', ' ')\n  .replace('Z', '');\n\nmsg.params = [msg.payload, formattedTimestamp];\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 840,
+        "y": 300,
+        "wires": [
+            [
+                "c4ded7df9c5775bd",
+                "ea3f2ffef1a3481e"
+            ]
+        ]
+    },
+    {
+        "id": "c4ded7df9c5775bd",
+        "type": "debug",
+        "z": "06679cb8334c370d",
+        "name": "debug 4",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "params",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1020,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "ea3f2ffef1a3481e",
+        "type": "postgresql",
+        "z": "06679cb8334c370d",
+        "name": "",
+        "query": "insert into sensor_hump_2 (hump, time_load)\nvalues ($1, $2);",
+        "postgreSQLConfig": "cb51a2432783f5be",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 1030,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "67c6e0cc9de2fa74",
+        "type": "mqtt-broker",
+        "name": "mqtt_t",
+        "broker": "82.146.60.95",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "cb51a2432783f5be",
+        "type": "postgreSQLConfig",
+        "name": "",
+        "host": "127.0.0.1",
+        "hostFieldType": "str",
+        "port": "5432",
+        "portFieldType": "num",
+        "database": "mqtt",
+        "databaseFieldType": "str",
+        "ssl": "false",
+        "sslFieldType": "bool",
+        "applicationName": "",
+        "applicationNameType": "str",
+        "max": "10",
+        "maxFieldType": "num",
+        "idle": "1000",
+        "idleFieldType": "num",
+        "connectionTimeout": "10000",
+        "connectionTimeoutFieldType": "num",
+        "user": "postgres",
+        "userFieldType": "str",
+        "password": "15Anjie02",
+        "passwordFieldType": "str"
+    }
+]
