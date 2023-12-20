@@ -1,0 +1,2293 @@
+[
+    {
+        "id": "0c31dec2a24c9339",
+        "type": "tab",
+        "label": "OPC UA",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "06679cb8334c370d",
+        "type": "tab",
+        "label": "mqtt visual",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "b4a606ae1969c684",
+        "type": "tab",
+        "label": "Emails",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "a237ce86f32d8ce8",
+        "type": "ui_tab",
+        "name": "Mqtt",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "c328c50575d3ab16",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "ed00e3e8e1b4987e",
+        "type": "ui_group",
+        "name": "Mqtt Gauge",
+        "tab": "a237ce86f32d8ce8",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "274ed24b71c2e1e6",
+        "type": "mqtt-broker",
+        "name": "mybroker",
+        "broker": "82.146.60.95",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "b3b0b88029428517",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "3e86d7919c73ff30",
+        "type": "ui_group",
+        "name": "Axioma",
+        "tab": "b3b0b88029428517",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "5b6cd9283133e151",
+        "type": "ui_tab",
+        "name": "OPC UA",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "1b33c25d0f9f3c34",
+        "type": "ui_group",
+        "name": "Axioma AnalogArray",
+        "tab": "5b6cd9283133e151",
+        "order": 1,
+        "disp": true,
+        "width": "14",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "7ed6cee4ae659a55",
+        "type": "mqtt-broker",
+        "name": "mybroker",
+        "broker": "82.146.60.95",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "67c6e0cc9de2fa74",
+        "type": "mqtt-broker",
+        "name": "mqtt_t",
+        "broker": "82.146.60.95",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "cb3be406ea98d2d5",
+        "type": "ui_tab",
+        "name": "mqtt",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "6034fa67d682062a",
+        "type": "ui_group",
+        "name": "sens_t",
+        "tab": "cb3be406ea98d2d5",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e8ed8aa20e137021",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp://opcua.demo-this.com:51210/UA/SampleServer",
+        "secpol": "None",
+        "secmode": "None",
+        "none": true,
+        "login": false,
+        "usercert": false,
+        "usercertificate": "",
+        "userprivatekey": ""
+    },
+    {
+        "id": "f24a3be78f68d5c0",
+        "type": "ui_group",
+        "name": "Axioma AnalogScalar",
+        "tab": "5b6cd9283133e151",
+        "order": 2,
+        "disp": true,
+        "width": "14",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "391079d4dfe30841",
+        "type": "ui_group",
+        "name": "gauge Axioma analog scalar",
+        "tab": "5b6cd9283133e151",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "5721d65f95d7717e",
+        "type": "ui_group",
+        "name": "Gauge Axioma analog array",
+        "tab": "5b6cd9283133e151",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f31e9849acd5a696",
+        "type": "ui_group",
+        "name": "Mqtt Charts real data",
+        "tab": "a237ce86f32d8ce8",
+        "order": 2,
+        "disp": true,
+        "width": "15",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "35d62da172891abf",
+        "type": "ui_group",
+        "name": "Charts demo data",
+        "tab": "a237ce86f32d8ce8",
+        "order": 3,
+        "disp": true,
+        "width": "15",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "84c07d5f14ee57f5",
+        "type": "inject",
+        "z": "0c31dec2a24c9339",
+        "name": "posX",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "posX",
+        "payload": "",
+        "payloadType": "date",
+        "x": 70,
+        "y": 400,
+        "wires": [
+            [
+                "b6dfe26987241f27",
+                "396854e685176f1f",
+                "8cc9fac22171577f",
+                "6569fa34731c4b7a",
+                "de6cc8526941dc8f",
+                "b6aee8c433d2a9eb",
+                "f20b73ad1dc2c472"
+            ]
+        ]
+    },
+    {
+        "id": "b6dfe26987241f27",
+        "type": "OpcUa-Item",
+        "z": "0c31dec2a24c9339",
+        "item": "ns=2;i=11224",
+        "datatype": "Double",
+        "value": "",
+        "name": "Double",
+        "x": 300,
+        "y": 140,
+        "wires": [
+            [
+                "72924435ad850330"
+            ]
+        ]
+    },
+    {
+        "id": "72924435ad850330",
+        "type": "OpcUa-Client",
+        "z": "0c31dec2a24c9339",
+        "endpoint": "e8ed8aa20e137021",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "folderName4PKI": "",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "name": "",
+        "x": 520,
+        "y": 140,
+        "wires": [
+            [
+                "46cec9f1ad73c2b3",
+                "b87bdb9f27a93560"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "396854e685176f1f",
+        "type": "OpcUa-Item",
+        "z": "0c31dec2a24c9339",
+        "item": "ns=2;i=11353",
+        "datatype": "Float",
+        "value": "",
+        "name": "Float",
+        "x": 290,
+        "y": 600,
+        "wires": [
+            [
+                "3d4407179f9b9bb8"
+            ]
+        ]
+    },
+    {
+        "id": "3d4407179f9b9bb8",
+        "type": "OpcUa-Client",
+        "z": "0c31dec2a24c9339",
+        "endpoint": "e8ed8aa20e137021",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "folderName4PKI": "",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "name": "",
+        "x": 540,
+        "y": 600,
+        "wires": [
+            [
+                "b12ffa195148cfbd",
+                "272fb1e8926b610e"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "b12ffa195148cfbd",
+        "type": "ui_chart",
+        "z": "0c31dec2a24c9339",
+        "name": "",
+        "group": "1b33c25d0f9f3c34",
+        "order": 4,
+        "width": "0",
+        "height": "0",
+        "label": "Float",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 790,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8cc9fac22171577f",
+        "type": "OpcUa-Item",
+        "z": "0c31dec2a24c9339",
+        "item": "ns=2;i=11311",
+        "datatype": "Byte",
+        "value": "",
+        "name": "Byte",
+        "x": 290,
+        "y": 700,
+        "wires": [
+            [
+                "b37e38583b4c2cd4"
+            ]
+        ]
+    },
+    {
+        "id": "b37e38583b4c2cd4",
+        "type": "OpcUa-Client",
+        "z": "0c31dec2a24c9339",
+        "endpoint": "e8ed8aa20e137021",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "folderName4PKI": "",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "name": "",
+        "x": 540,
+        "y": 700,
+        "wires": [
+            [
+                "e01aa008e61ad654"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "e01aa008e61ad654",
+        "type": "ui_chart",
+        "z": "0c31dec2a24c9339",
+        "name": "",
+        "group": "1b33c25d0f9f3c34",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "label": "Byte",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 790,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6569fa34731c4b7a",
+        "type": "OpcUa-Item",
+        "z": "0c31dec2a24c9339",
+        "item": "ns=2;i=11359",
+        "datatype": "Double",
+        "value": "",
+        "name": "double",
+        "x": 290,
+        "y": 860,
+        "wires": [
+            [
+                "5350c7d65df9c5e2"
+            ]
+        ]
+    },
+    {
+        "id": "5350c7d65df9c5e2",
+        "type": "OpcUa-Client",
+        "z": "0c31dec2a24c9339",
+        "endpoint": "e8ed8aa20e137021",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "folderName4PKI": "",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "name": "",
+        "x": 540,
+        "y": 860,
+        "wires": [
+            [
+                "2f94eb030e137966",
+                "9dbf474e580ece12"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "2f94eb030e137966",
+        "type": "ui_chart",
+        "z": "0c31dec2a24c9339",
+        "name": "",
+        "group": "1b33c25d0f9f3c34",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "label": "double",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 790,
+        "y": 860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "46cec9f1ad73c2b3",
+        "type": "ui_chart",
+        "z": "0c31dec2a24c9339",
+        "name": "",
+        "group": "f24a3be78f68d5c0",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "label": "double",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 810,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "49ea4af0ecbd45dd",
+        "type": "OpcUa-Client",
+        "z": "0c31dec2a24c9339",
+        "endpoint": "e8ed8aa20e137021",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "folderName4PKI": "",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "name": "",
+        "x": 540,
+        "y": 240,
+        "wires": [
+            [
+                "9d17d62c562e7aee",
+                "2215c01fcd9bde77"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "9d17d62c562e7aee",
+        "type": "ui_chart",
+        "z": "0c31dec2a24c9339",
+        "name": "",
+        "group": "f24a3be78f68d5c0",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "label": "Float",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 810,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "de6cc8526941dc8f",
+        "type": "OpcUa-Item",
+        "z": "0c31dec2a24c9339",
+        "item": "ns=2;i=11218",
+        "datatype": "Float",
+        "value": "",
+        "name": "Float",
+        "x": 290,
+        "y": 240,
+        "wires": [
+            [
+                "49ea4af0ecbd45dd"
+            ]
+        ]
+    },
+    {
+        "id": "8ef3db80de657209",
+        "type": "OpcUa-Client",
+        "z": "0c31dec2a24c9339",
+        "endpoint": "e8ed8aa20e137021",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "folderName4PKI": "",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "name": "",
+        "x": 540,
+        "y": 320,
+        "wires": [
+            [
+                "6619f709df088431",
+                "ce61abdcd4795789"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "6619f709df088431",
+        "type": "ui_chart",
+        "z": "0c31dec2a24c9339",
+        "name": "",
+        "group": "f24a3be78f68d5c0",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "label": "Numeric",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": true,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 820,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b6aee8c433d2a9eb",
+        "type": "OpcUa-Item",
+        "z": "0c31dec2a24c9339",
+        "item": "ns=2;i=11230",
+        "datatype": "Float",
+        "value": "",
+        "name": "Numeric",
+        "x": 300,
+        "y": 320,
+        "wires": [
+            [
+                "8ef3db80de657209"
+            ]
+        ]
+    },
+    {
+        "id": "ce61abdcd4795789",
+        "type": "ui_gauge",
+        "z": "0c31dec2a24c9339",
+        "name": "",
+        "group": "391079d4dfe30841",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "Numeric",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-100",
+        "max": "100",
+        "colors": [
+            "#b30000",
+            "#0fe600",
+            "#ffd505"
+        ],
+        "seg1": "0",
+        "seg2": "50",
+        "diff": false,
+        "className": "",
+        "x": 820,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "2215c01fcd9bde77",
+        "type": "ui_gauge",
+        "z": "0c31dec2a24c9339",
+        "name": "",
+        "group": "391079d4dfe30841",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "Float",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-100",
+        "max": "100",
+        "colors": [
+            "#b30000",
+            "#0fe600",
+            "#ffd505"
+        ],
+        "seg1": "0",
+        "seg2": "50",
+        "diff": false,
+        "className": "",
+        "x": 810,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "b87bdb9f27a93560",
+        "type": "ui_gauge",
+        "z": "0c31dec2a24c9339",
+        "name": "",
+        "group": "391079d4dfe30841",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "Double",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-100",
+        "max": "100",
+        "colors": [
+            "#b30000",
+            "#0fe600",
+            "#ffd505"
+        ],
+        "seg1": "0",
+        "seg2": "50",
+        "diff": false,
+        "className": "",
+        "x": 820,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "272fb1e8926b610e",
+        "type": "ui_gauge",
+        "z": "0c31dec2a24c9339",
+        "name": "",
+        "group": "5721d65f95d7717e",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "Float",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-100",
+        "max": "100",
+        "colors": [
+            "#b30000",
+            "#0fe600",
+            "#ffd505"
+        ],
+        "seg1": "0",
+        "seg2": "50",
+        "diff": false,
+        "className": "",
+        "x": 790,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "9dbf474e580ece12",
+        "type": "ui_gauge",
+        "z": "0c31dec2a24c9339",
+        "name": "",
+        "group": "5721d65f95d7717e",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "Double",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-100",
+        "max": "100",
+        "colors": [
+            "#b30000",
+            "#0fe600",
+            "#ffd505"
+        ],
+        "seg1": "0",
+        "seg2": "50",
+        "diff": false,
+        "className": "",
+        "x": 780,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "f20b73ad1dc2c472",
+        "type": "OpcUa-Item",
+        "z": "0c31dec2a24c9339",
+        "item": "ns=2;i=11365",
+        "datatype": "Float",
+        "value": "",
+        "name": "NUmeric",
+        "x": 300,
+        "y": 760,
+        "wires": [
+            [
+                "d3ad76b621784cb1"
+            ]
+        ]
+    },
+    {
+        "id": "d3ad76b621784cb1",
+        "type": "OpcUa-Client",
+        "z": "0c31dec2a24c9339",
+        "endpoint": "e8ed8aa20e137021",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "folderName4PKI": "",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "name": "",
+        "x": 540,
+        "y": 760,
+        "wires": [
+            [
+                "40aa81cf708d8c82",
+                "f1a97b0bd7b3fc71"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "40aa81cf708d8c82",
+        "type": "ui_gauge",
+        "z": "0c31dec2a24c9339",
+        "name": "",
+        "group": "5721d65f95d7717e",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "Numeric",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-100",
+        "max": "100",
+        "colors": [
+            "#b30000",
+            "#0fe600",
+            "#ffd505"
+        ],
+        "seg1": "0",
+        "seg2": "50",
+        "diff": false,
+        "className": "",
+        "x": 800,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "f1a97b0bd7b3fc71",
+        "type": "ui_chart",
+        "z": "0c31dec2a24c9339",
+        "name": "",
+        "group": "1b33c25d0f9f3c34",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "label": "Numeric",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 800,
+        "y": 800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1ce42558f8128c94",
+        "type": "mqtt in",
+        "z": "06679cb8334c370d",
+        "name": "",
+        "topic": "sens/t",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "67c6e0cc9de2fa74",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 390,
+        "y": 140,
+        "wires": [
+            [
+                "c8d9ef8b1bc141e0",
+                "68afffcadc771c08",
+                "15d045bf135c4321"
+            ]
+        ]
+    },
+    {
+        "id": "c8d9ef8b1bc141e0",
+        "type": "ui_gauge",
+        "z": "06679cb8334c370d",
+        "name": "",
+        "group": "ed00e3e8e1b4987e",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "sens_t (real)",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-10",
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "20",
+        "seg2": "29",
+        "diff": false,
+        "className": "",
+        "x": 610,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "2d652dcf523ad799",
+        "type": "mqtt in",
+        "z": "06679cb8334c370d",
+        "name": "",
+        "topic": "sens/h",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "67c6e0cc9de2fa74",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 390,
+        "y": 340,
+        "wires": [
+            [
+                "2de71180683f30ba",
+                "4248cb5d6092160e",
+                "e799c366c53ba387"
+            ]
+        ]
+    },
+    {
+        "id": "2de71180683f30ba",
+        "type": "ui_gauge",
+        "z": "06679cb8334c370d",
+        "name": "",
+        "group": "ed00e3e8e1b4987e",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "sens_h ( (real))",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "0",
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "20",
+        "seg2": "50",
+        "diff": false,
+        "className": "",
+        "x": 620,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "68afffcadc771c08",
+        "type": "function",
+        "z": "06679cb8334c370d",
+        "name": "temp + time",
+        "func": "const currentDateTime = new Date();\nconst formattedTimestamp = currentDateTime.toLocaleString('en-UK', {\n  year: 'numeric',\n  month: '2-digit',\n  day: '2-digit',\n  hour12: false,\n  hour: '2-digit',\n  minute: '2-digit',\n  second: '2-digit',\n  fractionalSecondDigits: 3, // Include milliseconds\n});\n\nmsg.params = [msg.payload, formattedTimestamp]\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 40,
+        "wires": [
+            [
+                "b72556dcc55f9544"
+            ]
+        ]
+    },
+    {
+        "id": "b72556dcc55f9544",
+        "type": "debug",
+        "z": "06679cb8334c370d",
+        "name": "debug 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "params",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "4248cb5d6092160e",
+        "type": "function",
+        "z": "06679cb8334c370d",
+        "name": "hump + time",
+        "func": "const currentDateTime = new Date();\nconst formattedTimestamp = currentDateTime.toLocaleString('en-UK', {\n  year: 'numeric',\n  month: '2-digit',\n  day: '2-digit',\n  hour12: false,\n  hour: '2-digit',\n  minute: '2-digit',\n  second: '2-digit',\n  fractionalSecondDigits: 3, // Include milliseconds\n});\n\nmsg.params = [msg.payload, formattedTimestamp]\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 730,
+        "y": 260,
+        "wires": [
+            [
+                "3159896e6db36412"
+            ]
+        ]
+    },
+    {
+        "id": "3159896e6db36412",
+        "type": "debug",
+        "z": "06679cb8334c370d",
+        "name": "debug 2",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "params",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "6a807ef244882644",
+        "type": "mqtt in",
+        "z": "06679cb8334c370d",
+        "name": "",
+        "topic": "sensor/temp",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "67c6e0cc9de2fa74",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 410,
+        "y": 540,
+        "wires": [
+            [
+                "4f589c7f85a12be0",
+                "2b6fa3d22b7328b9",
+                "434a2e82c5090e02"
+            ]
+        ]
+    },
+    {
+        "id": "4f589c7f85a12be0",
+        "type": "ui_gauge",
+        "z": "06679cb8334c370d",
+        "name": "",
+        "group": "ed00e3e8e1b4987e",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Sensor_temp (rand)",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-10",
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "20",
+        "seg2": "29",
+        "diff": false,
+        "className": "",
+        "x": 640,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "9526d1a5fb342955",
+        "type": "mqtt in",
+        "z": "06679cb8334c370d",
+        "name": "",
+        "topic": "sensor/hump",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "67c6e0cc9de2fa74",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 410,
+        "y": 740,
+        "wires": [
+            [
+                "228a09deb744adad",
+                "b0a72855018b3d51",
+                "1e527dd1aa861ecf"
+            ]
+        ]
+    },
+    {
+        "id": "228a09deb744adad",
+        "type": "ui_gauge",
+        "z": "06679cb8334c370d",
+        "name": "",
+        "group": "ed00e3e8e1b4987e",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "sensor hunidity (rand)",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "0",
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "20",
+        "seg2": "50",
+        "diff": false,
+        "className": "",
+        "x": 640,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "2b6fa3d22b7328b9",
+        "type": "function",
+        "z": "06679cb8334c370d",
+        "name": "temp + time",
+        "func": "const currentDateTime = new Date();\nconst formattedTimestamp = currentDateTime.toLocaleString('en-UK', {\n  year: 'numeric',\n  month: '2-digit',\n  day: '2-digit',\n  hour12: false,\n  hour: '2-digit',\n  minute: '2-digit',\n  second: '2-digit',\n  fractionalSecondDigits: 3, // Include milliseconds\n});\n\nmsg.params = [msg.payload, formattedTimestamp]\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 460,
+        "wires": [
+            [
+                "eb0fb8daae299747"
+            ]
+        ]
+    },
+    {
+        "id": "eb0fb8daae299747",
+        "type": "debug",
+        "z": "06679cb8334c370d",
+        "name": "debug 3",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "params",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "b0a72855018b3d51",
+        "type": "function",
+        "z": "06679cb8334c370d",
+        "name": "hump + time",
+        "func": "const currentDateTime = new Date();\nconst formattedTimestamp = currentDateTime.toLocaleString('en-UK', {\n  year: 'numeric',\n  month: '2-digit',\n  day: '2-digit',\n  hour12: false,\n  hour: '2-digit',\n  minute: '2-digit',\n  second: '2-digit',\n  fractionalSecondDigits: 3, // Include milliseconds\n});\n\nmsg.params = [msg.payload, formattedTimestamp]\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 660,
+        "wires": [
+            [
+                "c4ded7df9c5775bd"
+            ]
+        ]
+    },
+    {
+        "id": "c4ded7df9c5775bd",
+        "type": "debug",
+        "z": "06679cb8334c370d",
+        "name": "debug 4",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "params",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 840,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "15d045bf135c4321",
+        "type": "ui_chart",
+        "z": "06679cb8334c370d",
+        "name": "",
+        "group": "f31e9849acd5a696",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "sens_t (real)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 610,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e799c366c53ba387",
+        "type": "ui_chart",
+        "z": "06679cb8334c370d",
+        "name": "",
+        "group": "f31e9849acd5a696",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "sens_h (real)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 610,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "434a2e82c5090e02",
+        "type": "ui_chart",
+        "z": "06679cb8334c370d",
+        "name": "",
+        "group": "35d62da172891abf",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "Sensor_temp (rand)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 640,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1e527dd1aa861ecf",
+        "type": "ui_chart",
+        "z": "06679cb8334c370d",
+        "name": "",
+        "group": "35d62da172891abf",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "sensor hunidity (rand)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 640,
+        "y": 800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d6daf2cb8a5c4beb",
+        "type": "function",
+        "z": "b4a606ae1969c684",
+        "name": "temp and date for DB",
+        "func": "const currentDateTime = new Date();\nconst formattedTimestamp = currentDateTime.toLocaleString('en-UK', {\n  year: 'numeric',\n  month: '2-digit',\n  day: '2-digit',\n  hour12: false,\n  hour: '2-digit',\n  minute: '2-digit',\n  second: '2-digit',\n  fractionalSecondDigits: 3, // Include milliseconds\n});\n\nmsg.params = [msg.payload, formattedTimestamp]\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 180,
+        "wires": [
+            [
+                "13446e0b3f419003"
+            ]
+        ]
+    },
+    {
+        "id": "13446e0b3f419003",
+        "type": "debug",
+        "z": "b4a606ae1969c684",
+        "name": "showing temp and date",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "params",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 690,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "c740a26333afebc0",
+        "type": "function",
+        "z": "b4a606ae1969c684",
+        "name": "hump amd date for db",
+        "func": "const currentDateTime = new Date();\nconst formattedTimestamp = currentDateTime.toLocaleString('en-UK', {\n  year: 'numeric',\n  month: '2-digit',\n  day: '2-digit',\n  hour12: false,\n  hour: '2-digit',\n  minute: '2-digit',\n  second: '2-digit',\n  fractionalSecondDigits: 3, // Include milliseconds\n});\n\nmsg.params = [msg.payload, formattedTimestamp]\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 360,
+        "wires": [
+            [
+                "a298cd5a0222c81f"
+            ]
+        ]
+    },
+    {
+        "id": "a298cd5a0222c81f",
+        "type": "debug",
+        "z": "b4a606ae1969c684",
+        "name": "showing hump and date",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "params",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 690,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "31014c84f671d84b",
+        "type": "http request",
+        "z": "b4a606ae1969c684",
+        "name": "get/3",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://cnc.kovalev.team/get/3",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 390,
+        "y": 580,
+        "wires": [
+            [
+                "8bfbf4b66ccbef94",
+                "211652a0a20fb9ca"
+            ]
+        ]
+    },
+    {
+        "id": "8bfbf4b66ccbef94",
+        "type": "function",
+        "z": "b4a606ae1969c684",
+        "name": "extraxting data from get/3 for db",
+        "func": "function formatDuration(hours, minutes, seconds) {\n    hours = parseInt(hours, 10) || 0;\n    minutes = parseInt(minutes, 10) || 0;\n    seconds = parseInt(seconds, 10) || 0;\n    const formattedHours = String(hours).padStart(3, '0');\n    const formattedMinutes = String(minutes).padStart(2, '0');\n    const formattedSeconds = String(seconds).padStart(2, '0');\n    return `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;\n}\n\nfunction extractNumberAndConvertToFloat(value) {\n    var extractedNumber = parseFloat(value.replace(' мм', '').replace(',', '.')) || 0;\n    return extractedNumber;\n}\n\nvar jsonData = msg.payload.data;\n\nvar motocHoursData = jsonData[0][1];\nvar motoc_hours_name = jsonData[0][0];\nvar core_work_time_ttl_value = motocHoursData[0][1];\nvar core_work_time_cur_value = motocHoursData[1][1];\nvar core_restart_cnt = parseInt(motocHoursData[2][1], 10) || 0;\nvar channel_cnt = parseInt(motocHoursData[3][1], 10) || 0;\n\nvar channel1Data = jsonData[1][1];\nvar c1_tot_work_time = channel1Data[0][1];\nvar c1_work_time_now = channel1Data[1][1];\nvar c1_stat = channel1Data[2][1];\nvar c1_mode = channel1Data[3][1];\nvar c1_prog_work_time = channel1Data[4][1];\nvar c1_percent_prog = parseInt(channel1Data[5][1].replace('%', ''), 10) || 0;\nvar c1_prog = channel1Data[6][1];\n\nvar axes_channel1 = jsonData[2][1];\nvar axes_C1_X_float = extractNumberAndConvertToFloat(axes_channel1[0][1]);\nvar axes_C1_Y_float = extractNumberAndConvertToFloat(axes_channel1[1][1]);\nvar axes_C1_Z_float = extractNumberAndConvertToFloat(axes_channel1[2][1]);\nvar axes_C1_B_float = extractNumberAndConvertToFloat(axes_channel1[3][1]);\nvar axes_C1_C_float = extractNumberAndConvertToFloat(axes_channel1[4][1]);\nvar axes_C1_S_float = extractNumberAndConvertToFloat(axes_channel1[5][1]);\nvar axes_C1_S2_float = extractNumberAndConvertToFloat(axes_channel1[6][1]);\n\nvar axes_channel2 = jsonData[3][1];\nvar axes_C2_X_float = extractNumberAndConvertToFloat(axes_channel2[0][1]);\nvar axes_C2_Y_float = extractNumberAndConvertToFloat(axes_channel2[1][1]);\nvar axes_C2_Z_float = extractNumberAndConvertToFloat(axes_channel2[2][1]);\nvar axes_C2_B_float = extractNumberAndConvertToFloat(axes_channel2[3][1]);\nvar axes_C2_C_float = extractNumberAndConvertToFloat(axes_channel2[4][1]);\nvar axes_C2_S_float = extractNumberAndConvertToFloat(axes_channel2[5][1]);\nvar axes_C2_S2_float = extractNumberAndConvertToFloat(axes_channel2[6][1]);\n\nvar axes_channel3 = jsonData[4][1];\nvar axes_C3_X_float = extractNumberAndConvertToFloat(axes_channel3[0][1]);\nvar axes_C3_Y_float = extractNumberAndConvertToFloat(axes_channel3[1][1]);\nvar axes_C3_Z_float = extractNumberAndConvertToFloat(axes_channel3[2][1]);\nvar axes_C3_B_float = extractNumberAndConvertToFloat(axes_channel3[3][1]);\nvar axes_C3_C_float = extractNumberAndConvertToFloat(axes_channel3[4][1]);\nvar axes_C3_S_float = extractNumberAndConvertToFloat(axes_channel3[5][1]);\nvar axes_C3_S2_float = extractNumberAndConvertToFloat(axes_channel3[6][1]);\n\nvar axes_channel4 = jsonData[5][1];\nvar axes_C4_X_float = extractNumberAndConvertToFloat(axes_channel4[0][1]);\nvar axes_C4_Y_float = extractNumberAndConvertToFloat(axes_channel4[1][1]);\nvar axes_C4_Z_float = extractNumberAndConvertToFloat(axes_channel4[2][1]);\nvar axes_C4_B_float = extractNumberAndConvertToFloat(axes_channel4[3][1]);\nvar axes_C4_C_float = extractNumberAndConvertToFloat(axes_channel4[4][1]);\nvar axes_C4_S_float = extractNumberAndConvertToFloat(axes_channel4[5][1]);\nvar axes_C4_S2_float = extractNumberAndConvertToFloat(axes_channel4[6][1]);\n\nconst currentDateTime = new Date();\nconst formattedTimestamp = currentDateTime.toLocaleString('en-UK', {\n  year: 'numeric',\n  month: '2-digit',\n  day: '2-digit',\n  hour12: false,\n  hour: '2-digit',\n  minute: '2-digit',\n  second: '2-digit',\n  fractionalSecondDigits: 3,\n});\n\nmsg.params = [motoc_hours_name, core_work_time_ttl_value, core_work_time_cur_value, core_restart_cnt, channel_cnt, c1_tot_work_time, c1_work_time_now, c1_stat, c1_mode, c1_prog_work_time, c1_percent_prog, c1_prog, axes_C1_X_float, axes_C1_Y_float, axes_C1_Z_float, axes_C1_B_float, axes_C1_C_float, axes_C1_S_float, axes_C1_S2_float, axes_C2_X_float, axes_C2_Y_float, axes_C2_Z_float, axes_C2_B_float, axes_C2_C_float, axes_C2_S_float, axes_C2_S2_float, axes_C3_X_float, axes_C3_Y_float, axes_C3_Z_float, axes_C3_B_float, axes_C3_C_float, axes_C3_S_float, axes_C3_S2_float, axes_C4_X_float, axes_C4_Y_float, axes_C4_Z_float, axes_C4_B_float, axes_C4_C_float, axes_C4_S_float, axes_C4_S2_float, formattedTimestamp];\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 730,
+        "y": 520,
+        "wires": [
+            [
+                "f3f8b66d724fa41c"
+            ]
+        ]
+    },
+    {
+        "id": "91bdcabb1c846f83",
+        "type": "inject",
+        "z": "b4a606ae1969c684",
+        "name": "request each 1 second",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "600",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 620,
+        "wires": [
+            [
+                "31014c84f671d84b",
+                "3fd9ecfac41baec6"
+            ]
+        ]
+    },
+    {
+        "id": "3fd9ecfac41baec6",
+        "type": "http request",
+        "z": "b4a606ae1969c684",
+        "name": "get/5",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://cnc.kovalev.team/get/5",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 390,
+        "y": 660,
+        "wires": [
+            [
+                "ae624f0368bdb2a6",
+                "092df5855526f35a"
+            ]
+        ]
+    },
+    {
+        "id": "ae624f0368bdb2a6",
+        "type": "function",
+        "z": "b4a606ae1969c684",
+        "name": "extraxting data from get/5 for db",
+        "func": "function extractNumberAndConvertToFloat(value) {\n    // Extract number from the value (remove мм)\n    var extractedNumber = parseFloat(value.replace(' мм', '').replace(',', '.')) || 0;\n\n    // Convert to float format\n    return extractedNumber;\n}\n\nvar jsonData = msg.payload.data;\n\nvar motocHoursData = jsonData[0][1];\nvar motoc_hours_name = jsonData[0][0];\nvar core_work_time_ttl_value = motocHoursData[0][1];\nvar core_work_time_cur_value = motocHoursData[1][1];\nvar core_restart_cnt = parseInt(motocHoursData[2][1], 10) || 0;\nvar channel_cnt = parseInt(motocHoursData[3][1], 10) || 0;\n\nvar channel1Data = jsonData[1][1];\nvar c1_tot_work_time= channel1Data[0][1];\nvar c1_work_time_now=channel1Data[1][1];\nvar c1_stat= channel1Data[2][1];\nvar c1_mode= channel1Data[3][1];\nvar c1_prog_work_time= channel1Data[4][1];\n// Extract the percentage value from the string\nvar c1_percent_prog= channel1Data[5][1];\nc1_percent_prog= parseInt(c1_percent_prog.replace('%', ''), 10) || 0;\nvar c1_prog=channel1Data[6][1];\n\nvar axes_channel1 = jsonData[2][1];\nvar axes_C1_X_float = extractNumberAndConvertToFloat(axes_channel1[0][1]);\nvar axes_C1_Y_float = extractNumberAndConvertToFloat(axes_channel1[1][1]);\nvar axes_C1_Z_float = extractNumberAndConvertToFloat(axes_channel1[2][1]);\nvar axes_C1_B_float = extractNumberAndConvertToFloat(axes_channel1[3][1]);\nvar axes_C1_C_float = extractNumberAndConvertToFloat(axes_channel1[4][1]);\nvar axes_C1_S_float = extractNumberAndConvertToFloat(axes_channel1[5][1]);\n\nconst currentDateTime = new Date();\nconst formattedTimestamp = currentDateTime.toLocaleString('en-UK', {\n  year: 'numeric',\n  month: '2-digit',\n  day: '2-digit',\n  hour12: false,\n  hour: '2-digit',\n  minute: '2-digit',\n  second: '2-digit',\n  fractionalSecondDigits: 3, // Include milliseconds\n});\n\n\nmsg.params = [motoc_hours_name, core_work_time_ttl_value\n    , core_work_time_cur_value, core_restart_cnt, channel_cnt\n    , c1_tot_work_time, c1_work_time_now, c1_stat, c1_mode, c1_prog_work_time\n    , c1_percent_prog, c1_prog, axes_C1_X_float, axes_C1_Y_float,axes_C1_Z_float\n    , axes_C1_B_float, axes_C1_C_float, axes_C1_S_float, formattedTimestamp];\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 860,
+        "wires": [
+            [
+                "f064f46e99565bd6"
+            ]
+        ]
+    },
+    {
+        "id": "f064f46e99565bd6",
+        "type": "debug",
+        "z": "b4a606ae1969c684",
+        "name": "showing get/5 data",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "params",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1070,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "4e58fc557b86afe2",
+        "type": "switch",
+        "z": "b4a606ae1969c684",
+        "name": "humid >= 90 %",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gte",
+                "v": "90",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 580,
+        "y": 280,
+        "wires": [
+            [
+                "83f6c9bd536e3ec4"
+            ]
+        ]
+    },
+    {
+        "id": "83f6c9bd536e3ec4",
+        "type": "function",
+        "z": "b4a606ae1969c684",
+        "name": "text for 90% humid",
+        "func": "var hump = msg.payload\nmsg = {\n  payload : \"ATTENTION. The humidity is \"+ hump +\"%, this is more than (or equal to) 90% \" + Date().toString(),\n  topic : \"Emergency\",\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 280,
+        "wires": [
+            [
+                "0e41ab607974cffc"
+            ]
+        ]
+    },
+    {
+        "id": "d34b48c426936c52",
+        "type": "e-mail",
+        "z": "b4a606ae1969c684",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "authtype": "BASIC",
+        "saslformat": true,
+        "token": "oauth2Response.access_token",
+        "secure": true,
+        "tls": true,
+        "name": "manufacturingnremergency@gmail.com",
+        "dname": "Email to burunduk get 5",
+        "x": 1570,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "3d4cd3925d15ebcb",
+        "type": "switch",
+        "z": "b4a606ae1969c684",
+        "name": "temp >= 30",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gte",
+                "v": "30",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 570,
+        "y": 80,
+        "wires": [
+            [
+                "cabd64c13bac9d84"
+            ]
+        ]
+    },
+    {
+        "id": "cabd64c13bac9d84",
+        "type": "function",
+        "z": "b4a606ae1969c684",
+        "name": "text for 30C ",
+        "func": "var temp = msg.payload\nmsg = {\n  payload : \"ATTENTION. The temperature is \"+ temp +\"C, this is more than (or equal to) 30C \" + Date().toString(),\n  topic : \"Emergency\",\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 810,
+        "y": 80,
+        "wires": [
+            [
+                "4d88a0071a7c64f7"
+            ]
+        ]
+    },
+    {
+        "id": "ec406ad511a70e2c",
+        "type": "switch",
+        "z": "b4a606ae1969c684",
+        "name": "Error in get 3",
+        "property": "params",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Ошибка",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1050,
+        "y": 580,
+        "wires": [
+            [
+                "22415711196275f2"
+            ]
+        ]
+    },
+    {
+        "id": "22415711196275f2",
+        "type": "function",
+        "z": "b4a606ae1969c684",
+        "name": "text for Error (get3)",
+        "func": "var hump = msg.payload\nmsg = {\n  payload : \"ATTENTION. there is an error in the 1-st channel (get3) \" + Date().toString(),\n  topic : \"Emergency\",\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1290,
+        "y": 580,
+        "wires": [
+            [
+                "3eb4e92579e55a63"
+            ]
+        ]
+    },
+    {
+        "id": "467d06dceca7e655",
+        "type": "switch",
+        "z": "b4a606ae1969c684",
+        "name": "Error in get 5",
+        "property": "params",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Ошибка",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1010,
+        "y": 740,
+        "wires": [
+            [
+                "165804ad3563cd6c"
+            ]
+        ]
+    },
+    {
+        "id": "165804ad3563cd6c",
+        "type": "function",
+        "z": "b4a606ae1969c684",
+        "name": "text for Error (get5)",
+        "func": "var hump = msg.payload\nmsg = {\n  payload : \"ATTENTION. there is an error in the 1-st channel (get5) \" + Date().toString(),\n  topic : \"Emergency\",\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1290,
+        "y": 740,
+        "wires": [
+            [
+                "d34b48c426936c52"
+            ]
+        ]
+    },
+    {
+        "id": "211652a0a20fb9ca",
+        "type": "function",
+        "z": "b4a606ae1969c684",
+        "name": "Extracting the status from get/3",
+        "func": "var jsonData = msg.payload.data;\nmsg.params = [jsonData[1][1][2][1]];\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 730,
+        "y": 580,
+        "wires": [
+            [
+                "ec406ad511a70e2c"
+            ]
+        ]
+    },
+    {
+        "id": "f3f8b66d724fa41c",
+        "type": "debug",
+        "z": "b4a606ae1969c684",
+        "name": "showing get/3 data",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "params",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1070,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "092df5855526f35a",
+        "type": "function",
+        "z": "b4a606ae1969c684",
+        "name": "Extracting the status from get/5",
+        "func": "var jsonData = msg.payload.data;\nmsg.params = [jsonData[1][1][2][1]];\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 730,
+        "y": 740,
+        "wires": [
+            [
+                "467d06dceca7e655"
+            ]
+        ]
+    },
+    {
+        "id": "3eb4e92579e55a63",
+        "type": "e-mail",
+        "z": "b4a606ae1969c684",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "authtype": "BASIC",
+        "saslformat": true,
+        "token": "oauth2Response.access_token",
+        "secure": true,
+        "tls": true,
+        "name": "manufacturingnremergency@gmail.com",
+        "dname": "Email to burunduk get3",
+        "x": 1570,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "0e41ab607974cffc",
+        "type": "e-mail",
+        "z": "b4a606ae1969c684",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "authtype": "BASIC",
+        "saslformat": true,
+        "token": "oauth2Response.access_token",
+        "secure": true,
+        "tls": true,
+        "name": "manufacturingnremergency@gmail.com",
+        "dname": "Email to burunduk hump",
+        "x": 1150,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "4d88a0071a7c64f7",
+        "type": "e-mail",
+        "z": "b4a606ae1969c684",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "authtype": "BASIC",
+        "saslformat": true,
+        "token": "oauth2Response.access_token",
+        "secure": true,
+        "tls": true,
+        "name": "manufacturingnremergency@gmail.com",
+        "dname": "Email to burunduk temp",
+        "x": 1110,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "0b74c60b489eddac",
+        "type": "mqtt in",
+        "z": "b4a606ae1969c684",
+        "name": "",
+        "topic": "sens/t",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "67c6e0cc9de2fa74",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 120,
+        "wires": [
+            [
+                "d6daf2cb8a5c4beb",
+                "3d4cd3925d15ebcb"
+            ]
+        ]
+    },
+    {
+        "id": "ab3f7f2a97bb853a",
+        "type": "mqtt in",
+        "z": "b4a606ae1969c684",
+        "name": "",
+        "topic": "sens/h",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "67c6e0cc9de2fa74",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 320,
+        "wires": [
+            [
+                "c740a26333afebc0",
+                "4e58fc557b86afe2"
+            ]
+        ]
+    }
+]
